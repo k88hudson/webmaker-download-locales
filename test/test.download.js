@@ -18,7 +18,7 @@ describe("download-webmaker-locales", function() {
     var tmp = require("os").tmpdir() + "/webmaker-download-locales/" + app;
 
     it("should download locales for " + app, function(done) {
-      downloader(app, tmp, function(err) {
+      downloader({app: app, dir: tmp}, function(err) {
         should.not.exist(err);
         done();
       });
